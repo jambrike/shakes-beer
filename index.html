@@ -19,10 +19,57 @@
                 background-color: #573b3b;
             }
             .header{
+                position: relative;
                 text-align: center;
                 padding: 20px;
                 color: white;
                 background: #684343;
+            }
+            .coffee-link{
+                position: absolute;
+                top: 50%;
+                right: clamp(40px, 7vw, 96px);
+                transform: translateY(-50%);
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                padding: 12px 18px;
+                border: 1px solid rgba(255,255,255,0.32);
+                border-radius: 999px;
+                background: #f6d7a7;
+                color: #573b3b;
+                font-size: 15px;
+                font-weight: 700;
+                text-decoration: none;
+                box-shadow: 0 3px 8px rgba(0,0,0,0.16);
+                transition: transform .2s, box-shadow .2s, background .2s;
+            }
+            .coffee-link:hover{
+                transform: translateY(calc(-50% - 2px));
+                background: #ffe5bb;
+                box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+            }
+            .coffee-link:focus-visible{
+                outline: 3px solid white;
+                outline-offset: 3px;
+            }
+            @media (max-width: 620px){
+                .header{
+                    padding: 62px 16px 20px;
+                }
+                .header h1{
+                    font-size: 30px;
+                }
+                .coffee-link{
+                    top: 12px;
+                    right: 16px;
+                    transform: none;
+                    padding: 9px 14px;
+                    font-size: 14px;
+                }
+                .coffee-link:hover{
+                    transform: translateY(-2px);
+                }
             }
             .header h1{
                 margin: 0;
@@ -97,6 +144,7 @@
     </head>
     <body>
         <div class="header">
+            <a class="coffee-link" href="https://buymeacoffee.com/jamesosully" target="_blank" rel="noopener noreferrer">Buy me a coffee <span aria-hidden="true">☕</span></a>
             <h1>Othello Study Notes</h1>
             <p class="subt">Top tier notes for LC and practice quotes!</p>
         </div>
